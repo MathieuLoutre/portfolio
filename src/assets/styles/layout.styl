@@ -1,0 +1,71 @@
+selectionColor = #b4d5fe
+
+textShadowToCropUnderline(color)
+	text-shadow: .03em 0 color, -.03em 0 color, 0 .03em color, 0 -.03em color, .06em 0 color, -.06em 0 color, .09em 0 color, -.09em 0 color, .12em 0 color, -.12em 0 color, .15em 0 color, -.15em 0 color
+
+linkUnderlines(backgroundColor, textColor, highlight = '')
+	color: textColor
+	text-decoration: none
+	textShadowToCropUnderline: backgroundColor
+	background-image: 
+		linear-gradient(backgroundColor, backgroundColor), 
+		linear-gradient(backgroundColor, backgroundColor), 
+		linear-gradient(highlight || textColor, highlight || textColor)
+	background-size: .05em 2px, .05em 2px, 2px 2px
+	background-repeat: no-repeat, no-repeat, repeat-x
+	background-position 0% 95%, 100% 95%, 0% 95%
+	transition: color 0.5s ease
+	cursor: pointer
+
+	&::selection
+		textShadowToCropUnderline(selectionColor)
+		background: selectionColor
+
+	&::-moz-selection
+		textShadowToCropUnderline(selectionColor)
+		background: selectionColor
+
+	&:before, &:after, *, *:before, *:after
+		text-shadow: none
+
+	&:visited
+		color: textColor
+	
+	&:hover
+		color: highlight || textColor
+
+body
+	background-color: white
+	color: black
+	font-family: Lora
+	line-height: 1.5
+	text-rendering: optimizeLegibility
+	font-variant-ligatures: common-ligatures
+	font-feature-settings: "kern", "liga"
+	font-kerning: normal
+	
+
+.center
+	margin: auto
+
+.link
+	linkUnderlines(white, black, red)
+
+.link-silver
+	linkUnderlines(white, silver, red)
+
+.link-red
+	linkUnderlines(white, red, black)
+	
+.right-3
+	right: -3rem
+	
+.offset
+	transform: translateX(100%)
+
+.offset0
+	transform: translateX(0%)
+
+.offset0-m
+	+below(1150px)
+		transform: translateX(0%)

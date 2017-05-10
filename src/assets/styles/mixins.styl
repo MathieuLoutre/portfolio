@@ -1,0 +1,246 @@
+add(array, val)
+	newArray = ""
+	
+	for v in array
+		push(newArray, v)
+		
+	push(newArray, val)
+	
+	return newArray
+
+concat(array, values...)
+	newArray = ""
+	
+	for val in array
+		push(newArray, val)
+	
+	for val in values
+		for v in val
+			push(newArray, v)
+	
+	shift(newArray)
+	
+	return newArray
+
+zip(first, second)
+	newArray = ""
+
+	for val, i in first
+		push(newArray, val second[i])
+	
+	shift(newArray)
+	
+	return newArray
+
+scale(unit, start, end, scale)
+	newArray = ""
+	
+	for i in start..end
+		push(newArray, unit(scale ** i, unit))
+	
+	shift(newArray)
+
+	return newArray
+	
+fluidFontFormula(min, max, minWidth, maxWidth)
+	"calc(%s + (%s - %s) * (100vw - %s) / (%s - %s))" % (min max min minWidth maxWidth minWidth)
+
+//////////////
+
+// All height should follow same scale (font-size, padding, margin, height)
+
+////////
+
+flexContentValues = flex-start start, flex-end end, center, space-around around, space-between between
+flexItemsValues = flex-start start, flex-end end, center, baseline, stretch
+overflowValues = visible hidden auto
+
+linearProgression = 0.1 10, 0.2 20, 0.3 30, 0.4 40, 0.5 50, 0.6 60, 0.7 70, 0.8 80, 0.9 90
+
+systemSans = futura-pt, FuturaEF, Futura, 'Century Gothic', sans-serif
+systemSerif = Lora, baskerville-urw, "Baskerville URW++", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif
+systemMono = Menlo, monospace
+
+heightScale = zip(concat(0, scale(rem, -1, 7, 1.25)), (0..9))
+borderSizes = (0 (0.2em '') (1px '-1') (2px '-2'))
+
+baseColours = rgb(30,30,30) 'black', rgb(250,250,248) 'white', rgb(165, 165, 165) 'silver', #ff1919 'red'
+colours = ""
+
+for colour in baseColours
+	for name in colour[1]
+		define(name, colour[0])
+
+		push(colours, colour[0] name) // Add base colour to main colour array
+		
+		for ratio in linearProgression
+			push(colours, rgba(colour[0], ratio[0]) name + '-o-' + ratio[1]) // create new colours on the opacity scale
+
+shift(colours)
+
+transitions = (all color (background-color 'bg') opacity transform top left right bottom)
+transitionsTimes = (0.15s '-quick') (0.3s '') (0.5s '-slow')
+transitionValues = ""
+
+for prop in transitions
+	propName = prop
+	propAlias = prop
+	
+	if length(prop) > 1
+		propName = prop[0] 
+		propAlias = prop[1]
+
+	for time in transitionsTimes
+		push(transitionValues, (propName + ' ' + time[0] + ' ease-in-out' propAlias + time[1]))
+
+shift(transitionValues)
+
+// TODO: do s() automatically
+// TODO: multi property classes
+// TODO: animation (transform) and animation on hover
+// TODO: loop through animated properties and add :hover, :focus and :active to them
+properties = {
+	position: (relative absolute fixed static)
+	top: 'top' heightScale
+	// left: 'left' heightScale
+	right: 'right' heightScale
+	// bottom: 'bottom' heightScale
+
+	display: block inline inline-block flex inline-flex
+	// vertical-align: 'v-align-' (center baseline top bottom)
+	justify-content: 'justify-' flexContentValues
+	flex-direction: row row-reverse column column-reverse
+	flex-wrap: 'flex-' (nowrap wrap wrap-reverse)
+	align-items: 'items-' flexItemsValues
+	align-content: 'content-' flexContentValues
+	// align-self: 'self-' flexItemsValues
+	// order: 'order-' add((0..10), (9999 'last'))
+	
+	color: colours
+	// opacity: 'o-' linearProgression
+	// z-index: 'z-' concat((-1..10), (9999 'last') unset)
+	// word-break: 'text-' (normal (break-all 'wrap') (keep-all 'nowrap'))
+	// white-space: 'space-' (nowrap normal)
+	// pointer: 'pointer:hover' ((cursor ''))
+
+	// background-position: ('bg-' ((s('center center') center) (s('top center') top) (s('center right') right) (s('bottom center') bottom) (s('center left') left)))
+	// background-repeat: ('bg-' (no-repeat repeat-x repeat-y repeat))
+	// background-color: ('bg-' colours)
+	// background-size: ('bg-' (cover contain))
+	
+	// border-radius: ('rounded' (0 (2px '') (50% 'circle')))
+	// border-top-left-radius: ('rounded-' ((0 'bottom') (0 'right')))
+	// border-top-right-radius: ('rounded-' ((0 'bottom') (0 'left')))
+	// border-bottom-left-radius: ('rounded-' ((0 'top') (0 'right')))
+	// border-bottom-right-radius: ('rounded-' ((0 'top') (0 'left')))
+
+	// border-width: ('border' borderSizes)
+	// border-top-width: ('border-top-' borderSizes)
+	// border-right-width: ('border-right-' borderSizes)
+	// border-bottom-width: ('border-bottom-' borderSizes)
+	// border-left-width: ('border-left-' borderSizes)
+	// border-style: solid
+	
+	// box-shadow: ('shadow-' ((s('0 0.2em 0 0 ' + rgba(black, 0.5)) 'solid-down') (s('0 0.2em 0 3px ' + rgba(black, 0.5)) 'soft-down') (s('2px 2px 20px ' + rgba(black, 0.5)) 'soft')))
+	// box-sizing: border-box
+	
+	width: 'w' concat(heightScale, range(10%, 100%, 10%), ((calc(100%/3) '-third') (auto '-auto')))
+	height: {
+		'h': add(concat(heightScale, range(10%, 100%, 10%)), (auto '-auto'))
+		'vh': (25vh 50vh 75vh 100vh)
+	}
+	min-height: 'min-height-' 100%
+	max-width: 'mw-' concat(zip(scale(rem, 11, 17, 1.25), (1..7)), (100% none))
+	
+	font-size: {
+		'f-': concat(heightScale, range(80%, 90%, 5%))
+		'fr-': range(1vw, 6vw)
+		'fluid-font-': ((fluidFontFormula(16px, 24px, 400px, 800px) 'small') (fluidFontFormula(24px, 48px, 600px, 1200px) 'large'))
+	}
+	font-family: ((systemSans 'sans-serif') (systemSerif 'serif') (systemMono 'monospace'))
+	font-style: italic
+	font-weight: 'fw' concat(range(100, 900, 100), ((normal '-normal') (bold '-bold')))
+	text-align: 'text-' (center left right justify)
+	text-decoration: (underline (none 'no-underline'))
+	text-transform: (uppercase capitalize lowercase (none 'text-transform-reset'))
+	// font-variant-caps: small-caps
+	// font-variant-ligatures: common-ligatures no-common-ligatures discretionary-ligatures
+	// font-variant-numeric: oldstyle-nums lining-nums proportional-nums tabular-nums
+	text-indent: 'indent-' zip(range(-1em, 2em, 0.5), (-2..4))
+	letter-spacing: 'tracked-' zip(range(-0.1em, 0.2em, 0.05em), ('tight' 'tighter' 0 'loose' 'looser' 'wide' 'wider'))
+	line-height: 'line-height-' zip(range(0.9, 1.6, 0.1), (0..6))
+	
+	// overflow: 'overflow-' overflowValues
+	// overflow-x: 'overflow-x-' overflowValues
+	// overflow-y: 'overflow-y-' overflowValues
+	// -webkit-overflow-scrolling: 'overflow-' (scroll (scroll 'x-scroll') (scroll 'y-scroll'))
+	
+	padding: 'p' heightScale
+	padding-left: 'pl' heightScale
+	padding-right: 'pr' heightScale
+	
+	padding-top: {
+		'pv': heightScale
+		'pt': heightScale
+	}
+	padding-bottom: {
+		'pv': heightScale
+		'pb': heightScale
+	}
+	
+	// 'ph':
+	// 	padding-left: heightScale
+	// 	padding-right: heightScale
+	
+	margin: 'm' heightScale
+	margin-left: 'ml' heightScale
+	margin-right: 'mr' heightScale
+	margin-top: 'mt' heightScale
+	margin-bottom: 'mb' heightScale
+	
+	// 'mv':
+	// 	margin-top: heightScale
+	// 	margin-bottom: heightScale
+	
+	// 'mh':
+	// 	margin-left: heightScale
+	// 	margin-right: heightScale
+	
+	// transition: 'anim-' transitionValues
+}
+
+createClass(prefix, property, suffix, config)
+	for value in config
+		val = value
+		name = value
+		
+		if length(value) > 1
+			val = value[0]
+			name = value[1]
+
+		name = unit(name, '') if name is a 'unit'
+		
+		.{prefix}{name}{suffix}
+			{property}: val
+
+createClasses(suffix = '')
+	for property, config in properties
+		prefix = ''
+		
+		if config is a 'object'
+			for prefix, conf in config
+				createClass(prefix, property, suffix, conf)
+		else
+			if config[0] is a 'string'
+				prefix = config[0]
+				config = config[1]
+		
+			createClass(prefix, property, suffix, config)
+
+createClasses()
+
+@media only screen and (max-width: 1150px)
+	createClasses('-m')
+
+@media only screen and (max-width: 600px)
+	createClasses('-s')
