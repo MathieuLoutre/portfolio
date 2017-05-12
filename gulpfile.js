@@ -27,7 +27,7 @@ gulp.task('css-prod', function () {
 			use: prefix(),
 			include: 'node_modules'
 		}))
-		.pipe(uncss({ html: ['./dist/index.html'], ignoreSheets: [/use.typekit/] }))
+		.pipe(uncss({ html: ['./dist/index.html'], ignoreSheets: [/use.typekit/, /fonts.googleapis/] }))
 		.pipe(nano())
 		.pipe(gulp.dest('./dist/assets'))
 		.pipe(browserSync.reload({ stream: true }))
