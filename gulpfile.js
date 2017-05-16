@@ -49,7 +49,8 @@ gulp.task('js', function () {
 	return gulp.src('./src/assets/js/app.js')
 		.pipe(bro({
 			transform: [
-				babelify.configure({ presets: ['es2015'] })
+				babelify.configure({ presets: ['es2015'] }),
+				[ 'uglifyify', { global: true } ]
 			]
 		}))
 		.pipe(gulp.dest('./dist/assets'))
@@ -73,5 +74,5 @@ gulp.task('serve', function () {
 	gulp.watch("./src/assets/js/*", ['js'])
 })
 
-gulp.task('default', ['copy-images', 'copy-html', 'js', 'serve'])
+gulp.task('default', ['copy-images', 'copy-html', 'css', 'js', 'serve'])
 gulp.task('build', ['copy-images', 'copy-html', 'css-prod', 'js'])
