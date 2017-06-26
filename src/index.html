@@ -12,10 +12,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
-	<script src="https://use.typekit.net/cjm4vbr.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-	<link rel="stylesheet" href="@@root_path/assets/app.css">
+	<script>
+		(function(d) {
+			var config = {
+				kitId: 'cjm4vbr',
+				scriptTimeout: 3000,
+				async: true
+			},
+			h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+	</script>
+
+	<link rel="stylesheet" href="/assets/app.css">
 </head>
 <body class="f-3 f-2-s serif">
 
@@ -31,11 +40,11 @@
 	</section>
 
 	<section class="pt8 pb6 f-3 uppercase tracked-loose mw-6 w80 flex justify-around content-center items-center sans-serif center fw500 column-s flex-wrap">
-		<a class="link mb3 mr4" href="#projects">Penguin</a> <a class="link mb3 mr4" href="#nzk">Night Zookeeper</a>  <a class="link mb3 mr4" href="#freelance">Freelance</a> <a class="link mb3 mr4" href="#contact">Contact</a> <a href="#awards" class="link mb3 mr4">Press<span class="tracked-tight">/A</span>wards</a>
+		<a class="link mb3 mr4" href="#projects">Penguin</a> <a class="link mb3 mr4" href="#nzk">Night Zookeeper</a>  <a class="link mb3 mr4" href="#freelance">Freelance</a> <a class="link mb3 mr4" href="#contact">Contact</a> <a href="#awards" id="awards-link" class="link mb3 mr4">Press<span class="tracked-tight">/A</span>wards</a>
 	</section>
 
 	<section class="mw-6 w80 center pt5">
-		<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2" id="projects">Creative Technology at Penguin</h2>
+		<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2" id="projects">Creative Technology at&nbsp;Penguin</h2>
 
 		<p class="pv6">
 			Our goal as a team is to create interactive spaces which will help reach new audiences. Half of it is finding an appealing concept, and the other is helping readers see the books in a different light. Oftentimes a book, particularly non fiction, can seem a little out of reach when in reality these books are made to be accessible. It’s easy to imagine someone dismissing a book because they think “it’s not for me” even before they’ve opened it. All they need is someone to shine a light in order for them to see the book for what it really is.
@@ -71,14 +80,21 @@
 
 	</section>
 
-	<a href="http://mountimprobable.com" target="_blank"><div class="mt8 mb8 w100 mw-100"  style="position:relative;padding-bottom:56%"><iframe src="https://gfycat.com/ifr/ComposedClearCob" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen></iframe></div></a>
+	<div class="mt8 mb8 w100 mw-100">
+		<div class="gfyitem" data-responsive=true data-optimize=true data-hd=true data-autoplay=true data-controls=false data-id="ComposedClearCob"></div>
+	</div>
 
 	<section class="mw-6 w80 center">
 
 		<div class="relative">
 			<p>
+<<<<<<< HEAD
 				When it came to manually tweaking your creature, replacing the series of obscure numbers was crucial to make the process more accessible. We wanted the user to feel like they could elongate and squish their creature by hand. Direct manipulation would have been the best approach, but given that the genes have a high interplay, the resulting interaction was confusing. Instead, we paired relevant genes together and plotted them on an interactive surface. This way you can make your changes in the physical space rather than in number space like the scientific original.
 			</p>	
+=======
+				When it came to tweaking, replacing the series of obscure numbers was crucial to make the process more accessible, and in fact more high level. Direct manipulation would have been the best approach, but given that the genes have a high interplay it was nearly impossible. So instead, we paired relevant genes together and plotted them on a surface so that you can make things in physical space rather than number space. It’s almost as if you were elongating and squishing your creature by hand.
+			</p>    
+>>>>>>> eaba61ed2daf6711c935b10e7667cfbd454d8782
 
 			<p class="absolute right-3 w40 offset top0 red static-m w100-m offset0-m pt5-m italic">
 				Creative Review Annual Award - Best in Book winner for the categories <a class="link-red" href="https://www.creativereview.co.uk/mount-improbable-penguin-books/" target="_blank">Digital Craft & Technical Innovation and Websites</a>
@@ -87,7 +103,9 @@
 	
 	</section>
 
-	<a href="http://mountimprobable.com" target="_blank"><div class="mt8 mb8 w100 mw-100"  style="position:relative;padding-bottom:56%"><iframe src="https://gfycat.com/ifr/AnimatedFreeCollie" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen></iframe></div></a>
+	<div class="mt8 mb8 w100 mw-100">
+		<div class="gfyitem" data-responsive=true data-optimize=true data-hd=true data-autoplay=true data-controls=false data-id="AnimatedFreeCollie"></div>
+	</div>
 
 	<section class="mw-6 w80 center">
 		<p class="pb7 text-center">
@@ -128,7 +146,9 @@
 			
 	</section>
 
-	<a href="http://sevenbrieflessons.com" target="_blank"><div class="mt8 mb8 w100 mw-100"  style="position:relative;padding-bottom:56%"><iframe src="https://gfycat.com/ifr/LegitimateFortunateEstuarinecrocodile" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen></iframe></div></a>
+	<div class="mt8 mb8 w100 mw-100">
+		<div class="gfyitem" data-responsive=true data-optimize=true data-hd=true data-autoplay=true data-controls=false data-id="LegitimateFortunateEstuarinecrocodile"></div>
+	</div>
 
 	<section class="mw-6 w80 center">
 		<p class="pb7 text-center">
@@ -161,7 +181,7 @@
 			</p>
 
 			<p class="absolute right-3 w40 offset top0 red static-m w100-m offset0-m pt5-m italic">
-				Discover the series at <a href="http://littleblackclassics.com" target="_blank" class="link-red">littleblackclassics.com</a>
+				See the 127 books at <a href="http://littleblackclassics.com" target="_blank" class="link-red">littleblackclassics.com</a>
 			</p>
 		</div>
 	</section>
@@ -182,7 +202,7 @@
 		</div>
 	</section>
 
-	<a href="http://default-man.com" target="_blank"><img src="/assets/images/grayson.jpg" class="w100 mt8 mb8" /></a>
+	<a href="http://default-man.com" target="_blank"><img src="/assets/images/grayson.jpg" class="w100 mw-100 mt8 mb8" /></a>
 
 	<section class="mw-6 w80 center pt5">
 		<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2" id="nzk">Night Zookeeper</h2>
@@ -199,7 +219,7 @@
 		</div>
 	</section>
 
-	<a href="http://nightzookeeper.com" target="_blank"><img src="/assets/images/nzk.jpg" class="w100 mt8 mb8" /></a>
+	<a href="http://nightzookeeper.com" target="_blank"><img src="/assets/images/nzk.jpg" class="w100 mw-100 mt8 mb8" /></a>
 
 	<section class="mw-6 w80 center">
 		<div class="relative pb3">
@@ -218,7 +238,7 @@
 
 	</section>
 
-	<img src="/assets/images/freelance.jpg" class="w100 mt8 mb8" />
+	<img src="/assets/images/freelance.jpg" class="w100 mw-100 mt8 mb8" />
 
 	<section class="mw-6 w80 center">
 		<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2 pt3" id="contact">Contact</h2>
@@ -230,50 +250,109 @@
 		</div>
 	</section>
 
-	<section class="mw-6 w80 center">
-		<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2 mt3" id="awards">Press/Awards</h2>
+	<section class="overflow-hidden relative">
+		<div class="h0">
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			<span class="f-6 emoji left">🏆</span>
+			<span class="f-6 emoji left">🎉</span>
+			<span class="f-6 emoji left">👏</span>
+			
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+			<span class="f-6 emoji right">🏆</span>
+			<span class="f-6 emoji right">🎉</span>
+			<span class="f-6 emoji right">👏</span>
+		</div>
 
-		<div class="relative mt6 pb7">
-			<p>
-				In the last few years my work has been featured in magazines, on television and radio. Some people have written some very nice things about it too and some even have awarded us prizes. Here’s a short selection.
+		<div class="mw-6 w80 center">
+			<h2 class="sans-serif fw500 f-5 uppercase tracked-loose line-height-2 mt3" id="awards">Press/Awards</h2>
+
+			<div class="relative mt6 pb7">
+				<p>
+					In the last few years my work has been featured in magazines, on television and radio. Some people have written some very nice things about it too and some even have awarded us prizes. Here’s a short selection.
+				</p>
+			</div>
+
+			<h3 class="sans-serif fw500 f-4 uppercase tracked-loose pb6 line-height-2">Press</h3>
+
+			<p class="pb7">
+				<a class="link" href="https://www.theguardian.com/technology/2014/nov/19/night-zookeeper-zoo-kids-create-play" target="_blank">Guardian</a>, <a class="link" href="https://www.theguardian.com/technology/2015/apr/12/gaming-children-education-creating-designing" target="_blank">Guardian</a>, BBC World Service, <a class="link" href="http://www.bbc.co.uk/news/science-environment-36358104" target="_blank">BBC News</a>, <a class="link" href="https://www.newscientist.com/article/2093366-richard-dawkinss-biomorphs-come- back-to-life/" target="_blank">New Scientist</a>, <a class="link" href="http://www.itsnicethat.com/articles/penguin" target="_blank">It’s Nice That</a>,
+				<a class="link" href="http://www.itsnicethat.com/news/richard-dawkins-x-penguin-books-270516" target="_blank">It’s Nice That</a>,
+				<a class="link" href="http://www.itsnicethat.com/articles/penguin-seven-brief-lessons-digital-narrative" target="_blank">It’s Nice That</a>, <a class="link" href="https://www.creativereview.co.uk/every-one-unique-how-penguin-blended-coding-and-design-to-revisit-richard-dawkins-classic-texts/" target="_blank">Creative Review</a>, <a class="link" href="http://www.fastcodesign.com/3042456/this-is-how-you-sell-books-in-the-digital-age" target="_blank">FastCo Design
+				</a>, <a class="link" href="http://www.fastcodesign.com/3051656/a-playful-interactive-approach-to-book- marketing-in-the-digital-age" target="_blank">FastCo Design</a>, <a class="link" href="https://www.fastcodesign.com/3060200/early-richard-dawkins-books-get-an-algorithmically-generated-redesign" target="_blank">FastCo Design</a>, <a class="link" href="http://www.thebookseller.com/futurebook/mathieu-triay" target="_blank">The Bookseller</a>, 
+				<a class="link" href="http://www.thebookseller.com/news/penguin-cracks-code-unique-cover-design-celebration-dawkins-330694" target="_blank">The Bookseller</a>
 			</p>
+			
+			<h3 class="sans-serif fw500 f-4 uppercase tracked-loose pb6 line-height-2">Awards</h3>
+
+			<div class="f-80 pb8">
+				<h4 class="sans-serif f-3 pb0">Children BAFTA</h4>
+					<p class="">Nomination, Primary Learning, 2015</p>
+				<h4 class="sans-serif f-3 pb0 pt3">Creative Review</h4>
+					<p class="">Winner, Best in Book, Craft and Technical Innovation, 2017</p>
+					<p class="">Winner, Best in Book, Websites, 2017</p>
+				<h4 class="sans-serif f-3 pb0 pt3">Lovie Awards</h4>
+					<p class="">Winner, Bronze + Popular Vote: Best Home/Welcome Page, 2016</p>
+					<p class="">Winner, Bronze + Popular Vote: Best Brand Microsite, 2016</p>
+				<h4 class="sans-serif f-3 pb0 pt3">FutureBook</h4>
+					<p class="">Winner, Best Digital Marketing and Publicity Campaign, 2016</p>
+					<p class="">Nomination, Best Digital Marketing and Publicity Campaign, 2015</p>
+				<h4 class="sans-serif f-3 pb0 pt3">British Book Design and Production Awards</h4>
+					<p class="">Winner, British Book Design & Production Awards: Best Multimedia Book, 2016</p>
+				<h4 class="sans-serif f-3 pb0 pt3">Book Marketing Society</h4>
+					<p class="">Winner, Book Marketing Society: Best Multi-Title Campaign, 2016</p>
+				<h4 class="sans-serif f-3 pb0 pt3">Design For Experience</h4>
+					<p class="">Winner, Experience for Children, 2013</p>
+				<h4 class="sans-serif f-3 pb0 pt3">The Drum/DADI Awards</h4>
+					<p class="">Finalist, Best In-house Website, App or Campaign, 2015</p>
+				<h4 class="sans-serif f-3 pb0 pt3">The Drum/MOMA Awards</h4>
+					<p class="">Commendation, Best User Experience and Usability, 2015</p>
+			</div>
 		</div>
-
-		<h3 class="sans-serif fw500 f-4 uppercase tracked-loose pb6 line-height-2">Press</h3>
-
-		<p class="pb7">BBC World Service, <a class="link" href="http://www.bbc.co.uk/news/science-environment-36358104" target="_blank">BBC News</a>, <a class="link" href="https://www.newscientist.com/article/2093366-richard-dawkinss-biomorphs-come- back-to-life/" target="_blank">New Scientist</a>, <a class="link" href="http://www.itsnicethat.com/articles/penguin" target="_blank">It’s Nice That</a>,
-		<a class="link" href="http://www.itsnicethat.com/news/richard-dawkins-x-penguin-books-270516" target="_blank">It’s Nice That</a>,
-		<a class="link" href="http://www.itsnicethat.com/articles/penguin-seven-brief-lessons-digital-narrative" target="_blank">It’s Nice That</a>, <a class="link" href="https://www.creativereview.co.uk/every-one-unique-how-penguin-blended-coding-and-design-to-revisit-richard-dawkins-classic-texts/" target="_blank">Creative Review</a>, <a class="link" href="http://www.fastcodesign.com/3042456/this-is-how-you-sell-books-in-the-digital-age" target="_blank">FastCo Design
-		</a>, <a class="link" href="http://www.fastcodesign.com/3051656/a-playful-interactive-approach-to-book- marketing-in-the-digital-age" target="_blank">FastCo Design</a>, <a class="link" href="https://www.fastcodesign.com/3060200/early-richard-dawkins-books-get-an-algorithmically-generated-redesign" target="_blank">FastCo Design</a>, <a class="link" href="http://www.thebookseller.com/futurebook/mathieu-triay" target="_blank">The Bookseller</a>, 
-		<a class="link" href="http://www.thebookseller.com/news/penguin-cracks-code-unique-cover-design-celebration-dawkins-330694" target="_blank">The Bookseller</a></p>
-
-		<h3 class="sans-serif fw500 f-4 uppercase tracked-loose pb6 line-height-2">Awards</h3>
-
-		<div class="f-80 pb8">
-			<h4 class="sans-serif f-3 pb0">Children BAFTA</h4>
-				<p class="">Nomination, Primary Learning, 2015</p>
-			<h4 class="sans-serif f-3 pb0 pt3">Creative Review</h4>
-				<p class="">Winner, Best in Book, Craft and Technical Innovation, 2017</p>
-				<p class="">Winner, Best in Book, Websites, 2017</p>
-			<h4 class="sans-serif f-3 pb0 pt3">Lovie Awards</h4>
-				<p class="">Winner, Bronze + Popular Vote: Best Home/Welcome Page, 2016</p>
-				<p class="">Winner, Bronze + Popular Vote: Best Brand Microsite, 2016</p>
-			<h4 class="sans-serif f-3 pb0 pt3">FutureBook</h4>
-				<p class="">Winner, Best Digital Marketing and Publicity Campaign, 2016</p>
-				<p class="">Nomination, Best Digital Marketing and Publicity Campaign, 2015</p>
-			<h4 class="sans-serif f-3 pb0 pt3">British Book Design and Production Awards</h4>
-				<p class="">Winner, British Book Design & Production Awards: Best Multimedia Book, 2016</p>
-			<h4 class="sans-serif f-3 pb0 pt3">Book Marketing Society</h4>
-				<p class="">Winner, Book Marketing Society: Best Multi-Title Campaign, 2016</p>
-			<h4 class="sans-serif f-3 pb0 pt3">Design For Experience</h4>
-				<p class="">Winner, Experience for Children, 2013</p>
-			<h4 class="sans-serif f-3 pb0 pt3">The Drum/DADI Awards</h4>
-				<p class="">Finalist, Best In-house Website, App or Campaign, 2015</p>
-			<h4 class="sans-serif f-3 pb0 pt3">The Drum/MOMA Awards</h4>
-				<p class="">Commendation, Best User Experience and Usability, 2015</p>
-		</div>
-
 	</section>
+
+	<script src="/assets/app.js"></script>
+
+	<script>
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "https://assets.gfycat.com/gfycat.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'gfycat-js'));
+	</script>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
